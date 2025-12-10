@@ -1,0 +1,721 @@
+/*
+ * Ticket Machine Application - Professional Blue/White Theme
+ * 
+ * Modern, clean design inspired by professional travel booking apps.
+ * 
+ * Color Palette:
+ * - Primary Blue: #2E5BFF
+ * - Primary Dark: #1A3DB0
+ * - Background: #F5F7FA
+ * - Card White: #FFFFFF
+ * - Text Primary: #1A1A2E
+ * - Text Secondary: #6B7280
+ * - Success: #10B981
+ * - Danger: #EF4444
+ * - Border: #E5E7EB
+ */
+
+/* ==================== ROOT & GENERAL ==================== */
+
+.root-container {
+    -fx-background-color: #F5F7FA;
+}
+
+.home-view,
+.results-view,
+.payment-view,
+.ticket-view {
+    -fx-background-color: #F5F7FA;
+}
+
+/* ==================== HOME VIEW ==================== */
+
+.home-header {
+    -fx-background-color: linear-gradient(to bottom right, #2E5BFF, #1A3DB0);
+}
+
+.greeting-text {
+    -fx-font-family: 'Segoe UI', 'SF Pro Display', -fx-font;
+    -fx-font-size: 14px;
+    -fx-text-fill: rgba(255, 255, 255, 0.8);
+}
+
+.header-title {
+    -fx-font-family: 'Segoe UI', 'SF Pro Display', -fx-font;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+}
+
+.booking-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 24 24 0 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 20, 0, 0, -5);
+    -fx-translate-y: -20;
+}
+
+/* Type Selector */
+.type-selector-container {
+    -fx-spacing: 12;
+}
+
+.ticket-type-btn {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #6B7280;
+    -fx-background-color: #F5F7FA;
+    -fx-background-radius: 12;
+    -fx-padding: 16 24;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-border-radius: 12;
+    -fx-border-width: 2;
+}
+
+.ticket-type-btn:hover {
+    -fx-background-color: #EEF2FF;
+    -fx-border-color: #2E5BFF;
+}
+
+.ticket-type-btn:selected {
+    -fx-background-color: #EEF2FF;
+    -fx-text-fill: #2E5BFF;
+    -fx-border-color: #2E5BFF;
+}
+
+/* Location Fields */
+.location-row {
+    -fx-padding: 8 0;
+}
+
+.location-icon-container {
+    -fx-min-width: 24;
+    -fx-min-height: 24;
+}
+
+.field-label {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 12px;
+    -fx-text-fill: #6B7280;
+}
+
+.location-combo,
+.class-combo,
+.date-picker {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 14px;
+    -fx-background-color: #F9FAFB;
+    -fx-background-radius: 8;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 8;
+    -fx-padding: 10 12;
+}
+
+.location-combo:hover,
+.class-combo:hover,
+.date-picker:hover {
+    -fx-border-color: #2E5BFF;
+}
+
+.route-connector {
+    -fx-background-color: #E5E7EB;
+    -fx-background-radius: 1;
+}
+
+/* Passenger Spinner */
+.passenger-spinner {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-background-color: #F9FAFB;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 8;
+    -fx-pref-height: 42;
+    -fx-min-height: 42;
+}
+
+.passenger-spinner .text-field {
+    -fx-background-color: transparent;
+    -fx-font-weight: 600;
+    -fx-alignment: center;
+    -fx-pref-height: 40;
+}
+
+.passenger-spinner .increment-arrow-button,
+.passenger-spinner .decrement-arrow-button {
+    -fx-background-color: #F9FAFB;
+    -fx-pref-height: 20;
+}
+
+/* Search Button */
+.search-btn {
+    -fx-background-color: linear-gradient(to right, #2E5BFF, #1A3DB0);
+    -fx-background-radius: 12;
+    -fx-padding: 16 24;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(46, 91, 255, 0.3), 10, 0, 0, 4);
+}
+
+.search-btn:hover {
+    -fx-background-color: linear-gradient(to right, #1A3DB0, #0F2980);
+    -fx-effect: dropshadow(gaussian, rgba(46, 91, 255, 0.4), 15, 0, 0, 6);
+}
+
+.search-btn-text {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* ==================== RESULTS VIEW ==================== */
+
+.results-header {
+    -fx-background-color: linear-gradient(to bottom right, #2E5BFF, #1A3DB0);
+}
+
+.back-btn {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 8;
+    -fx-padding: 8;
+    -fx-cursor: hand;
+}
+
+.back-btn:hover {
+    -fx-background-color: #F5F7FA;
+}
+
+.route-title {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+}
+
+.route-details {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 12px;
+    -fx-text-fill: rgba(255, 255, 255, 0.8);
+}
+
+.filter-tabs {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 0 0 1 0;
+}
+
+.filter-tab {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #6B7280;
+    -fx-background-color: #F5F7FA;
+    -fx-background-radius: 20;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+
+.filter-tab:selected,
+.filter-tab-primary:selected {
+    -fx-background-color: #2E5BFF;
+    -fx-text-fill: #FFFFFF;
+}
+
+.results-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.results-scroll>.viewport {
+    -fx-background-color: transparent;
+}
+
+.results-container {
+    -fx-background-color: transparent;
+}
+
+/* Result Card */
+.result-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 10, 0, 0, 2);
+}
+
+.route-code {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A1A2E;
+}
+
+.class-label {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 12px;
+    -fx-text-fill: #6B7280;
+}
+
+.price-label {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2E5BFF;
+}
+
+.available-label {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 11px;
+    -fx-text-fill: #10B981;
+}
+
+.limited-label {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 11px;
+    -fx-text-fill: #EF4444;
+}
+
+.time-label {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A1A2E;
+}
+
+.station-label {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 12px;
+    -fx-text-fill: #6B7280;
+}
+
+.duration-label {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 11px;
+    -fx-text-fill: #6B7280;
+}
+
+.book-btn {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #2E5BFF;
+    -fx-background-color: #EEF2FF;
+    -fx-background-radius: 8;
+    -fx-padding: 12;
+    -fx-cursor: hand;
+}
+
+.book-btn:hover {
+    -fx-background-color: #2E5BFF;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* ==================== PAYMENT VIEW ==================== */
+
+.payment-header {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 0 0 1 0;
+}
+
+.page-title {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A1A2E;
+}
+
+.summary-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 10, 0, 0, 2);
+}
+
+.summary-header {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A1A2E;
+}
+
+.summary-label {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 14px;
+    -fx-text-fill: #6B7280;
+}
+
+.summary-value {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #1A1A2E;
+}
+
+.total-text {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A1A2E;
+}
+
+.total-amount {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2E5BFF;
+}
+
+.payment-section {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 10, 0, 0, 2);
+}
+
+.payment-section-title {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A1A2E;
+}
+
+.payment-denomination-btn {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #2E5BFF;
+    -fx-background-color: #EEF2FF;
+    -fx-background-radius: 10;
+    -fx-padding: 14 20;
+    -fx-cursor: hand;
+    -fx-border-color: #2E5BFF;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+}
+
+.payment-denomination-btn:hover {
+    -fx-background-color: #2E5BFF;
+    -fx-text-fill: #FFFFFF;
+}
+
+.amount-display-box {
+    -fx-background-color: #F9FAFB;
+    -fx-background-radius: 12;
+}
+
+.amount-label {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 14px;
+    -fx-text-fill: #6B7280;
+}
+
+.amount-value-inserted {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #10B981;
+}
+
+.amount-value-remaining {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #EF4444;
+}
+
+.cancel-btn {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #6B7280;
+    -fx-background-color: #F5F7FA;
+    -fx-background-radius: 12;
+    -fx-padding: 14 24;
+    -fx-cursor: hand;
+}
+
+.cancel-btn:hover {
+    -fx-background-color: #E5E7EB;
+}
+
+.confirm-btn {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: #10B981;
+    -fx-background-radius: 12;
+    -fx-padding: 14 24;
+    -fx-cursor: hand;
+}
+
+.confirm-btn:hover {
+    -fx-background-color: #059669;
+}
+
+.confirm-btn:disabled {
+    -fx-background-color: #D1D5DB;
+    -fx-text-fill: #9CA3AF;
+    -fx-cursor: default;
+}
+
+/* ==================== TICKET VIEW ==================== */
+
+.ticket-header {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* Booking Summary Section */
+.booking-summary-section {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 0 0 1 0;
+}
+
+.summary-title-small {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 11px;
+    -fx-text-fill: #6B7280;
+}
+
+.summary-value-small {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #1A1A2E;
+}
+
+.summary-price-value {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2E5BFF;
+}
+
+.summary-change-value {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #10B981;
+}
+
+.tickets-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.tickets-scroll>.viewport {
+    -fx-background-color: transparent;
+}
+
+.tickets-container {
+    -fx-background-color: transparent;
+}
+
+.boarding-pass {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 15, 0, 0, 4);
+}
+
+.ticket-top-section {
+    -fx-background-color: linear-gradient(to bottom right, #2E5BFF, #1A3DB0);
+    -fx-background-radius: 20 20 0 0;
+}
+
+.ticket-route-code {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 14px;
+    -fx-text-fill: rgba(255, 255, 255, 0.8);
+}
+
+.ticket-route-title {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+}
+
+.ticket-date {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 13px;
+    -fx-text-fill: rgba(255, 255, 255, 0.7);
+}
+
+.ticket-divider {
+    -fx-background-color: #FFFFFF;
+}
+
+.cutout-left {
+    -fx-background-color: #F5F7FA;
+    -fx-background-radius: 0 8 8 0;
+    -fx-translate-x: -8;
+}
+
+.cutout-right {
+    -fx-background-color: #F5F7FA;
+    -fx-background-radius: 8 0 0 8;
+    -fx-translate-x: 8;
+}
+
+.dashed-line {
+    -fx-background-color: repeating-linear-gradient(to right, #E5E7EB 0px, #E5E7EB 8px, transparent 8px, transparent 16px);
+}
+
+.ticket-time-section {
+    -fx-background-color: #FFFFFF;
+}
+
+.ticket-time {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A1A2E;
+}
+
+.ticket-time-date {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 12px;
+    -fx-text-fill: #6B7280;
+}
+
+.ticket-duration {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 11px;
+    -fx-text-fill: #6B7280;
+}
+
+.ticket-details-grid {
+    -fx-background-color: #FFFFFF;
+}
+
+.detail-label {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 11px;
+    -fx-text-fill: #9CA3AF;
+}
+
+.detail-value {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #1A1A2E;
+}
+
+.ticket-price-section {
+    -fx-background-color: #F9FAFB;
+}
+
+.ticket-price {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2E5BFF;
+}
+
+.ticket-change {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #10B981;
+}
+
+.barcode-section {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 0 0 20 20;
+}
+
+.barcode {
+    -fx-padding: 8;
+}
+
+.barcode-number {
+    -fx-font-family: 'Consolas', 'Courier New', monospace;
+    -fx-font-size: 12px;
+    -fx-text-fill: #6B7280;
+}
+
+.download-btn {
+    -fx-background-color: #2E5BFF;
+    -fx-background-radius: 12;
+    -fx-padding: 14 24;
+    -fx-cursor: hand;
+}
+
+.download-btn:hover {
+    -fx-background-color: #1A3DB0;
+}
+
+.new-booking-btn {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #2E5BFF;
+    -fx-background-color: #EEF2FF;
+    -fx-background-radius: 12;
+    -fx-padding: 14 24;
+    -fx-cursor: hand;
+}
+
+.new-booking-btn:hover {
+    -fx-background-color: #DBEAFE;
+}
+
+/* ==================== COMMON ELEMENTS ==================== */
+
+.separator {
+    -fx-background-color: #E5E7EB;
+    -fx-padding: 0.5;
+}
+
+/* Scrollbar styling */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #D1D5DB;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #9CA3AF;
+}
+
+.scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-shape: "";
+    -fx-padding: 0;
+}
+
+/* ComboBox popup styling */
+.combo-box-popup .list-view {
+    -fx-background-color: #FFFFFF;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0, 0, 4);
+    -fx-background-radius: 8;
+}
+
+.combo-box-popup .list-cell {
+    -fx-font-family: 'Segoe UI', -fx-font;
+    -fx-font-size: 14px;
+    -fx-text-fill: #1A1A2E;
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 10 12;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #F5F7FA;
+}
+
+.combo-box-popup .list-cell:selected {
+    -fx-background-color: #EEF2FF;
+    -fx-text-fill: #2E5BFF;
+}
